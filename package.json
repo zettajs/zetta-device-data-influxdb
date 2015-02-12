@@ -1,6 +1,6 @@
 {
   "name": "zetta-device-data-influxdb",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "Send all device data streams to InfluxDB",
   "main": "collection-influxdb.js",
   "directories": {
@@ -18,6 +18,6 @@
   "dependencies": {
     "influx": "^3.2.0",
     "rx": "^2.3.25",
-    "zetta-device-data-collection": "^0.2.0"
+    "zetta-device-data-collection": "^0.4.0"
   }
 }
