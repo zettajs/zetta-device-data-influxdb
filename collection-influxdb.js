@@ -5,7 +5,7 @@ var StatsCollector = require('zetta-device-data-collection');
 
 var InfluxDbCollector = module.exports = function(options) {
   StatsCollector.call(this);
-  options = options || {};
+  this.options = options || {};
   var windowMs = options.windowMs || 2000;
   var self = this;
   /*
@@ -39,7 +39,7 @@ var InfluxDbCollector = module.exports = function(options) {
       return ret;
     })
     .subscribe(function (data) {
-      influx.writeSeries(options.host, options.port, options.database, data,  function(err) {
+      influx.writeSeries(self.options.host, self.options.port, self.options.database, data,  function(err) {
         if (err) {
           self.server.error('Failed to send stats to influxdb, ' + err);
         }
@@ -48,7 +48,9 @@ var InfluxDbCollector = module.exports = function(options) {
 };
 util.inherits(InfluxDbCollector, StatsCollector);
 
-
+InfluxDbCollector.prototype.configure = function(options) {
+  this.options = options;
+};
 
 
 
