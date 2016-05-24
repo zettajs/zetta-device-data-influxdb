@@ -1,6 +1,6 @@
 {
   "name": "zetta-device-data-influxdb",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Send all device data streams to InfluxDB",
   "main": "collection-influxdb.js",
   "directories": {
