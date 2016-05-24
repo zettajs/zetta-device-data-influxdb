@@ -17,6 +17,6 @@
   "license": "MIT",
   "dependencies": {
     "rx": "^2.3.25",
-    "zetta-device-data-collection": "^0.4.0"
+    "zetta-device-data-collection": "^0.6.0"
   }
 }
