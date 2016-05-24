@@ -1,6 +1,6 @@
 var util = require('util');
 var Rx = require('rx');
-var influx = require('influx');
+var influx = require('./influx-basic-client');
 var StatsCollector = require('zetta-device-data-collection');
 
 var InfluxDbCollector = module.exports = function(options) {
@@ -17,7 +17,6 @@ var InfluxDbCollector = module.exports = function(options) {
     database : process.env.INFLUX_DB
   };
   */
-  var client = influx(options);
   Rx.Observable.fromEvent(this.emitter, 'event')
     .window(function() { return Rx.Observable.timer(windowMs); })
     .flatMap(function(e) { return e.toArray(); })
@@ -40,7 +39,7 @@ var InfluxDbCollector = module.exports = function(options) {
       return ret;
     })
     .subscribe(function (data) {
-      client.writeSeries(data,  function(err) {
+      influx.writeSeries(options.host, options.port, options.database, data,  function(err) {
         if (err) {
           self.server.error('Failed to send stats to influxdb, ' + err);
         }

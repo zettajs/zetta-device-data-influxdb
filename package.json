@@ -16,7 +16,6 @@
   "author": "Adam Magaluk <AdamMagaluk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "influx": "^3.2.0",
     "rx": "^2.3.25",
     "zetta-device-data-collection": "^0.4.0"
   }
