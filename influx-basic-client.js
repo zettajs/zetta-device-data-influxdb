@@ -37,7 +37,6 @@ exports.writeSeries = function(influxUrlHost, influxUrlPort, db, points, cb) {
   }
 
   var req = http.request(opts, function(res) {
-    console.log(res.statusCode);
     if(res.statusCode != 204) {
       return cb(new Error('Could not insert analytics'));
     } 
