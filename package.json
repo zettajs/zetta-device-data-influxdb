@@ -1,6 +1,6 @@
 {
   "name": "zetta-device-data-influxdb",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Send all device data streams to InfluxDB",
   "main": "collection-influxdb.js",
   "directories": {
@@ -16,8 +16,7 @@
   "author": "Adam Magaluk <AdamMagaluk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "influx": "^3.2.0",
     "rx": "^2.3.25",
-    "zetta-device-data-collection": "^0.4.0"
+    "zetta-device-data-collection": "^0.6.0"
   }
 }
