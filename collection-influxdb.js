@@ -17,7 +17,7 @@ var InfluxDbCollector = module.exports = function(options) {
     database : process.env.INFLUX_DB
   };
   */
-  Rx.Observable.fromEvent(this.emitter, 'event')
+  Rx.Observable.fromEvent(this, 'event')
     .window(function() { return Rx.Observable.timer(windowMs); })
     .flatMap(function(e) { return e.toArray(); })
     .filter(function(arr) { return arr.length > 0 })
